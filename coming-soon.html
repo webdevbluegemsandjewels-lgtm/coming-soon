@@ -101,12 +101,6 @@
   }
   .hero-section > *{ position: relative; z-index: 1; }
 
-  .crest{
-    width: 46px;
-    height: 46px;
-    margin-bottom: 1.6rem;
-  }
-
   .eyebrow{
     font-size: .72rem;
     letter-spacing: .38em;
@@ -297,14 +291,6 @@
 <body>
 
 <section class="hero-section">
-  <svg class="crest" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M24 4 L36 16 L24 44 L12 16 Z" stroke="#d8be8f" stroke-width="1.1"/>
-    <path d="M12 16 H36" stroke="#d8be8f" stroke-width="1.1"/>
-    <path d="M17 16 L24 4 L31 16" stroke="#d8be8f" stroke-width="1.1"/>
-    <path d="M24 44 L17 16" stroke="#d8be8f" stroke-width="1.1"/>
-    <path d="M24 44 L31 16" stroke="#d8be8f" stroke-width="1.1"/>
-  </svg>
-
   <p class="eyebrow">Fine Jewellery</p>
   <h1 class="wordmark">Orenka<em>Fine</em></h1>
   <div class="rule"></div>
@@ -378,8 +364,15 @@
   // public in the page source can't be used to scrape the list.
   // No automated notification email goes out from here — signups are
   // just stored for you to follow up with manually later.
-  var SUPABASE_URL = "https://xjepiecjsomrallliifj.supabase.co";
-  var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhqZXBpZWNqc29tcmFsbGxpaWZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQwODgyMDEsImV4cCI6MjA5OTY2NDIwMX0.cSYAd2dJcYOUvnGc66wjWtjVcww12p2rhHetZwzRoms";
+  //
+  // Real values pulled out of source control on purpose — see
+  // .env.example. This is a plain static HTML file with no build
+  // step, so nothing here reads a real .env file at runtime; paste
+  // your actual URL/anon key (Supabase Dashboard → Settings → API)
+  // over the two placeholders below before deploying this page, the
+  // same way js/supabaseClient.js does for the rest of the site.
+  var SUPABASE_URL = "YOUR_SUPABASE_URL";
+  var SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
   var supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
   document.getElementById('notify-form').addEventListener('submit', function (e) {
